@@ -1,0 +1,160 @@
+$primary-color: #ff4e42;
+$secondary-color: #f9f9f9;
+$text-color: #333;
+$card-bg: #fff;
+$header-bg: rgba(255, 78, 66, 0.9);
+$table-border: #ddd;
+
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  color: $text-color;
+  background-color: $primary-color;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $header-bg;
+    color: #fff;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav {
+      display: flex;
+      gap: 1.5rem;
+
+      .nav-item {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+
+        &.active {
+          font-weight: bold;
+          text-decoration: underline;
+        }
+
+        // Add hover effect for upload and reports elements
+        &.upload,
+        &.reports {
+          &:hover {
+            cursor: pointer;
+            color: red;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: $secondary-color;
+
+    .overview-cards {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      .card {
+        background-color: $card-bg;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        flex: 1;
+
+        h2 {
+          font-size: 2rem;
+          margin: 0;
+        }
+
+        p {
+          font-size: 1rem;
+          color: $text-color;
+        }
+
+        &.exceptions {
+          position: relative;
+
+          .triangle-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: $primary-color;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+          }
+        }
+      }
+    }
+
+    .table-container {
+      background-color: $card-bg;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+
+      .table-header {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+
+        .search {
+          padding: 0.5rem;
+          border: 1px solid $table-border;
+          border-radius: 4px;
+          width: 200px;
+        }
+      }
+
+      .records-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+
+        th, td {
+          border: 1px solid $table-border;
+          padding: 0.8rem;
+          text-align: left;
+        }
+
+        th {
+          background-color: $secondary-color;
+          font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+          background-color: #f5f5f5;
+        }
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+
+        .page-btn {
+          background-color: $primary-color;
+          color: #fff;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

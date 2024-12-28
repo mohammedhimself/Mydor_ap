@@ -1,0 +1,54 @@
+<div class="login-container">
+    <div class="login-wrapper">
+      <div class="logo">
+        <img src="assets/images/sggh-logo.png" alt="Sleeknote Logo" />
+      </div>
+      <h1>Welcome to Dormant Support</h1>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+  
+    
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            [(ngModel)]="email"
+            name="email"
+            autocomplete="email"
+            required
+            
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            [(ngModel)]="password"
+            name="password"
+            autocomplete="current-password"
+            required
+           
+          />
+        </div>
+  
+        <div class="options">
+          <label>
+            <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe" />
+            Keep me logged in
+          </label>
+          <a href="#">Forgot your password?</a>
+        </div>
+  
+        <button type="submit" class="login-btn">Log in</button>
+      </form>
+  
+      <div class="signup-link">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </div>
+    </div>
+  </div>
+  
